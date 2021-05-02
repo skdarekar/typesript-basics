@@ -1,10 +1,14 @@
-//we can define return type of funuction
-function add(n1, n2) {
-    return n1 + n2;
+var userInput;
+var userName;
+userInput = 12;
+userInput = "anything";
+//we cannot simply assign unknown type to string variable in ts
+// userName = userInput;
+//We have to do type checking before assignment
+if (typeof userInput == "string") {
+    userName = userInput;
 }
-function printResult(result) {
-    console.log("Result", result);
+function generateError(message, code) {
+    throw { message: message, errorCode: code };
 }
-printResult(add(33, 4));
-var combineValues = add;
-console.log(combineValues(2, 3));
+generateError("Error here", 500);
